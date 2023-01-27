@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		EE35EB42297927F400C95A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35EB41297927F400C95A90 /* AppDelegate.swift */; };
 		EE35EB44297927F400C95A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35EB43297927F400C95A90 /* SceneDelegate.swift */; };
-		EE35EB46297927F400C95A90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35EB45297927F400C95A90 /* ViewController.swift */; };
+		EE35EB46297927F400C95A90 /* NonBreakingSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35EB45297927F400C95A90 /* NonBreakingSpaceViewController.swift */; };
 		EE35EB49297927F400C95A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE35EB47297927F400C95A90 /* Main.storyboard */; };
 		EE35EB4B297927F500C95A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE35EB4A297927F500C95A90 /* Assets.xcassets */; };
 		EE35EB4E297927F500C95A90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE35EB4C297927F500C95A90 /* LaunchScreen.storyboard */; };
 		EE35EB572979284400C95A90 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE35EB562979284400C95A90 /* TinyConstraints */; };
 		EE35EB5A2979288000C95A90 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EE35EB592979288000C95A90 /* Then */; };
 		EE65316F29826AA8003A5D7B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EE65316E29826AA7003A5D7B /* README.md */; };
+		EE65317229827839003A5D7B /* NavAnimationCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65317129827839003A5D7B /* NavAnimationCompletionViewController.swift */; };
+		EE653175298279CF003A5D7B /* UINavigationController+AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE653174298279CF003A5D7B /* UINavigationController+AnimationCompletion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE35EB3E297927F400C95A90 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE35EB41297927F400C95A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE35EB43297927F400C95A90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE35EB45297927F400C95A90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE35EB45297927F400C95A90 /* NonBreakingSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonBreakingSpaceViewController.swift; sourceTree = "<group>"; };
 		EE35EB48297927F400C95A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE35EB4A297927F500C95A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE35EB4D297927F500C95A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE35EB4F297927F500C95A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE65316E29826AA7003A5D7B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EE65317129827839003A5D7B /* NavAnimationCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAnimationCompletionViewController.swift; sourceTree = "<group>"; };
+		EE653174298279CF003A5D7B /* UINavigationController+AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AnimationCompletion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +69,23 @@
 			children = (
 				EE35EB41297927F400C95A90 /* AppDelegate.swift */,
 				EE35EB43297927F400C95A90 /* SceneDelegate.swift */,
-				EE35EB45297927F400C95A90 /* ViewController.swift */,
+				EE35EB45297927F400C95A90 /* NonBreakingSpaceViewController.swift */,
+				EE65317129827839003A5D7B /* NavAnimationCompletionViewController.swift */,
+				EE653173298279AB003A5D7B /* Mixin */,
 				EE35EB47297927F400C95A90 /* Main.storyboard */,
 				EE35EB4A297927F500C95A90 /* Assets.xcassets */,
 				EE35EB4C297927F500C95A90 /* LaunchScreen.storyboard */,
 				EE35EB4F297927F500C95A90 /* Info.plist */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		EE653173298279AB003A5D7B /* Mixin */ = {
+			isa = PBXGroup;
+			children = (
+				EE653174298279CF003A5D7B /* UINavigationController+AnimationCompletion.swift */,
+			);
+			path = Mixin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE35EB46297927F400C95A90 /* ViewController.swift in Sources */,
+				EE35EB46297927F400C95A90 /* NonBreakingSpaceViewController.swift in Sources */,
 				EE35EB42297927F400C95A90 /* AppDelegate.swift in Sources */,
+				EE653175298279CF003A5D7B /* UINavigationController+AnimationCompletion.swift in Sources */,
 				EE35EB44297927F400C95A90 /* SceneDelegate.swift in Sources */,
+				EE65317229827839003A5D7B /* NavAnimationCompletionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

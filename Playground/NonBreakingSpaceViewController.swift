@@ -9,7 +9,7 @@ import UIKit
 import TinyConstraints
 import Then
 
-class ViewController: UIViewController {
+class NonBreakingSpaceViewController: UIViewController {
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var lbl1TrailingConstraint: NSLayoutConstraint!
     
@@ -43,4 +43,3 @@ class ViewController: UIViewController {
         lbl1TrailingConstraint.constant = (1 - CGFloat(sender.value)) * view.frame.width * 3 / 4
     }
 }
-
