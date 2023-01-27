@@ -182,19 +182,19 @@ Adjust the bottom slider to see how the line break works when the label's bound 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjn-eV-cKi">
-                                <rect key="frame" x="20" y="123" width="353" height="594.33333333333337"/>
+                                <rect key="frame" x="20" y="305" width="353" height="375"/>
                                 <connections>
                                     <segue destination="eNs-fy-pNx" kind="embed" identifier="innerNav" id="eNa-Zt-syH"/>
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZaF-6A-Dhg">
-                                <rect key="frame" x="20" y="737.33333333333337" width="353" height="60.666666666666629"/>
+                                <rect key="frame" x="20" y="700" width="353" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="om1-w5-tBu">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="37.333333333333336"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nke-05-dSE">
-                                                <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="37.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="37.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Push VC">
                                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -204,7 +204,7 @@ Adjust the bottom slider to see how the line break works when the label's bound 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz3-uS-DQk">
-                                                <rect key="frame" x="176.66666666666663" y="0.0" width="176.33333333333337" height="37.333333333333336"/>
+                                                <rect key="frame" x="117.66666666666666" y="0.0" width="117.66666666666666" height="37.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Pop VC">
                                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -213,34 +213,110 @@ Adjust the bottom slider to see how the line break works when the label's bound 
                                                     <action selector="onTapPopVCButton:" destination="rEc-sc-N7T" eventType="touchUpInside" id="rm6-oE-qN6"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STv-SC-1UE">
+                                                <rect key="frame" x="235.33333333333334" y="0.0" width="117.66666666666666" height="37.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Pop to root">
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapPopToRootButton:" destination="rEc-sc-N7T" eventType="touchUpInside" id="3TZ-66-pvy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="add-pO-2xf">
+                                        <rect key="frame" x="0.0" y="37.333333333333371" width="353" height="37.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3Z-jw-6zd">
+                                                <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="37.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Set 5 VCs">
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapSet5VCsButton:" destination="rEc-sc-N7T" eventType="touchUpInside" id="hMr-Em-n3b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1b-Fl-hsT">
+                                                <rect key="frame" x="176.66666666666663" y="0.0" width="176.33333333333337" height="37.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Pop to 2nd VC">
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapPopTo2ndVCButton:" destination="rEc-sc-N7T" eventType="touchUpInside" id="gJj-kb-95c"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC5-QY-A2P">
-                                        <rect key="frame" x="0.0" y="37.333333333333258" width="353" height="23.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666629" width="353" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gp-sx-W5B">
+                                <rect key="frame" x="20" y="123" width="353" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="UINavigationController">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="14" name="AvenirNext-DemiBold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="'s push &amp; pop functions do not come with animation completion, but we can observe through it's ">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="14" name="AvenirNext-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="transitionCoordinator">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="14" name="AvenirNext-DemiBold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">.
+
+https://stackoverflow.com/questions/9906966/completion-handler-for-uinavigationcontroller-pushviewcontrolleranimated/33767837#33767837</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="14" name="AvenirNext-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xu4-0n-FJP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5Gp-sx-W5B" firstAttribute="top" secondItem="Oqb-j8-cuB" secondAttribute="topMargin" id="0uE-cT-QIb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZaF-6A-Dhg" secondAttribute="trailing" id="3ew-lO-2J1"/>
-                            <constraint firstItem="pjn-eV-cKi" firstAttribute="leading" secondItem="xu4-0n-FJP" secondAttribute="leading" constant="20" id="611-XC-jea"/>
+                            <constraint firstItem="pjn-eV-cKi" firstAttribute="top" secondItem="5Gp-sx-W5B" secondAttribute="bottom" constant="32" id="4ip-bY-l3g"/>
+                            <constraint firstItem="pjn-eV-cKi" firstAttribute="leading" secondItem="Oqb-j8-cuB" secondAttribute="leadingMargin" id="611-XC-jea"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Gp-sx-W5B" secondAttribute="trailing" id="IIA-ud-onZ"/>
                             <constraint firstItem="ZaF-6A-Dhg" firstAttribute="top" secondItem="pjn-eV-cKi" secondAttribute="bottom" constant="20" id="Iol-56-Czw"/>
-                            <constraint firstItem="pjn-eV-cKi" firstAttribute="top" secondItem="xu4-0n-FJP" secondAttribute="top" constant="20" id="JQY-fe-Ktt"/>
-                            <constraint firstItem="xu4-0n-FJP" firstAttribute="trailing" secondItem="pjn-eV-cKi" secondAttribute="trailing" constant="20" id="KsG-1z-W5J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pjn-eV-cKi" secondAttribute="trailing" id="KsG-1z-W5J"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZaF-6A-Dhg" secondAttribute="bottom" id="Tm8-Z6-QWF"/>
+                            <constraint firstItem="5Gp-sx-W5B" firstAttribute="leading" secondItem="Oqb-j8-cuB" secondAttribute="leadingMargin" id="eQp-gR-RIg"/>
                             <constraint firstItem="ZaF-6A-Dhg" firstAttribute="leading" secondItem="Oqb-j8-cuB" secondAttribute="leadingMargin" id="z3g-mj-Ly4"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animation completion" id="2rD-cd-9lc"/>
                     <connections>
+                        <outlet property="popTo2ndVCButton" destination="V1b-Fl-hsT" id="wuT-Se-phm"/>
+                        <outlet property="popToRootButton" destination="STv-SC-1UE" id="iia-nx-CsH"/>
                         <outlet property="popVCButton" destination="dz3-uS-DQk" id="muQ-nq-z77"/>
                         <outlet property="pushVCButton" destination="Nke-05-dSE" id="b8q-oJ-78n"/>
+                        <outlet property="set5VCsButton" destination="V3Z-jw-6zd" id="qKq-he-aE6"/>
                         <outlet property="statusLabel" destination="cC5-QY-A2P" id="c1V-an-CZm"/>
                     </connections>
                 </viewController>
@@ -268,7 +344,7 @@ Adjust the bottom slider to see how the line break works when the label's bound 
             <objects>
                 <viewController id="ny3-Jh-api" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2JK-il-df7">
-                        <rect key="frame" x="0.0" y="0.0" width="353" height="594.33333333333326"/>
+                        <rect key="frame" x="0.0" y="0.0" width="353" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="wtx-1P-SSu"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
