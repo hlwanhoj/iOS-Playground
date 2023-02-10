@@ -13,6 +13,8 @@ class DummyViewController: UIViewController {
     @IBOutlet var scrollContentView: UIView!
     private let tagListView = TagListView()
     
+    private let tagListView2 = TagListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +84,10 @@ class DummyViewController: UIViewController {
     @IBAction func onSpacingSliderValueChange(_ sender: UISlider) {
         tagListView.spacing = CGFloat(sender.value)
     }
+    
+    @IBAction func onRowSpacingSliderValueChange(_ sender: UISlider) {
+        tagListView.rowSpacing = CGFloat(sender.value)
+    }
 }
 
 //
@@ -136,19 +142,29 @@ class TagListView: UIView {
     private var tagViews: [UIView] = []
     private var frameForTagView: [UIView: CGRect] = [:]
     private(set) var numberOfRows: Int = 0
-    var spacing: CGFloat = 0 {
-        didSet {
-            invalidateIntrinsicContentSize()
-            setNeedsLayout()
-        }
-    }
+    /// How the children within a row should be placed in the main axis.
     var alignment: Alignment = .start {
         didSet {
             invalidateIntrinsicContentSize()
             setNeedsLayout()
         }
     }
+    /// How the children within a row should be aligned relative to each other in the cross axis.
     var crossAxisAlignment: Alignment = .start {
+        didSet {
+            invalidateIntrinsicContentSize()
+            setNeedsLayout()
+        }
+    }
+    /// How much space to place between children in a row in the main axis.
+    var spacing: CGFloat = 0 {
+        didSet {
+            invalidateIntrinsicContentSize()
+            setNeedsLayout()
+        }
+    }
+    /// How much space to place between the rows themselves in the cross axis.
+    var rowSpacing: CGFloat = 0 {
         didSet {
             invalidateIntrinsicContentSize()
             setNeedsLayout()
@@ -185,8 +201,11 @@ class TagListView: UIView {
         var height: CGFloat = 0
         let layoutViewsInRow: (Row) -> Void = { row in
             var xOffset: CGFloat = (self.preferredMaxLayoutWidth - row.width) * self.alignment.rawValue
+            if self.numberOfRows > 1 {
+                height += self.rowSpacing
+            }
             for viewAndSize in row.viewAndSizes {
-                let yOffset: CGFloat = (row.height - viewAndSize.size.height) * self.crossAxisAlignment.rawValue
+                var yOffset: CGFloat = (row.height - viewAndSize.size.height) * self.crossAxisAlignment.rawValue
                 self.frameForTagView[viewAndSize.view] = CGRect(origin: CGPoint(x: xOffset, y: height + yOffset), size: viewAndSize.size)
                 xOffset += (viewAndSize.size.width + row.spacing)
             }
@@ -206,6 +225,9 @@ class TagListView: UIView {
                 
                 if preferredMaxLayoutWidth < viewSize.width {
                     // Special handling for wide view
+                    if self.numberOfRows > 1 {
+                        height += self.rowSpacing
+                    }
                     view.frame = CGRect(
                         origin: CGPoint(x: 0, y: height),
                         size: CGSize(width: preferredMaxLayoutWidth, height: viewSize.height))
@@ -224,7 +246,14 @@ class TagListView: UIView {
 
         return CGSize(width: preferredMaxLayoutWidth, height: height)
     }
-
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        preferredMaxLayoutWidth = targetSize.width
+        let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+        preferredMaxLayoutWidth = 0
+        return size
+    }
+    
     //
     
     func addTagView(_ view: UIView) {
