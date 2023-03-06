@@ -9,7 +9,7 @@ import UIKit
 import Then
 import TinyConstraints
 
-class DummyViewController: UIViewController {
+class TagListViewController: UIViewController {
     @IBOutlet var scrollContentView: UIView!
     private let tagListView = TagListView()
     
